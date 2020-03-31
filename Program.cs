@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Test
+namespace Bus_Project
 {
     class Program
     {
@@ -9,12 +10,12 @@ namespace Test
             Console.WriteLine("Hello World!");
             bus miniBus = new bus();
             miniBus.Name = "Renault";
-            miniBus.Seat = 20;
+            //miniBus.Seat = 20;
             int x = miniBus.run();
 
             int y = miniBus.fuelRequiredToTravel(7);
-            Console.WriteLine("The bus name is {0}, the total number of seat in the bus is {1} and the running speed is ",
-                miniBus.Name, miniBus.Seat);
+            Console.WriteLine("The bus name is {0}, the total number of seat in the bus is and the running speed is ",
+                miniBus.Name);
             Console.WriteLine(y);
 
             Console.ReadLine();
@@ -32,7 +33,7 @@ namespace Test
             set { busName = value; }
         }
 
-        
+
 
         public int run()
         {
@@ -60,21 +61,22 @@ namespace Test
         public int fuelRequiredToTravel(int traveldistanceInkilometers)
         {
             int neededGasPerKilo = 6;
-            int requiredGastoDriveTheBus= traveldistanceInkilometers * neededGasPerKilo;
+            int requiredGastoDriveTheBus = traveldistanceInkilometers * neededGasPerKilo;
 
             //Console.WriteLine("");
             return requiredGastoDriveTheBus;
         }
 
 
-        var Seats = new List<int>();
+        //var Seats = new List<int>();
+        List<int> Seats = new List<int>();
         Random random = new Random();
-        bool emptySeat = true;   
+        bool emptySeat = true;
 
         public int eachPassengerSeatNumber()
         {
             int randomSeat = random.Next(1, 30);
-            for(int i =0;i<= Seats.Count - 1; i++)
+            for (int i = 0; i <= Seats.Count - 1; i++)
             {
                 if (Seats[i] == randomSeat)
                 {
@@ -85,8 +87,8 @@ namespace Test
             {
                 Seats.Add(randomSeat);
             }
-            
-            
+            return randomSeat;
+
         }
     }
 }
