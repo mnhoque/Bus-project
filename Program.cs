@@ -25,12 +25,17 @@ namespace Bus_Project
     class bus
     {
         private String busName;
-        private int totalSeat;
+        private int busNumber;
 
         public string Name   // property
         {
             get { return busName; }
             set { busName = value; }
+        }
+        public int number  // property
+        {
+            get { return busNumber; }
+            set { busNumber = value; }
         }
 
 
@@ -63,7 +68,7 @@ namespace Bus_Project
             int neededGasPerKilo = 6;
             int requiredGastoDriveTheBus = traveldistanceInkilometers * neededGasPerKilo;
 
-            //Console.WriteLine("");
+            
             return requiredGastoDriveTheBus;
         }
 
